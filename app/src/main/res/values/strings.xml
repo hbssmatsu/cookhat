@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">料理美人-ときめきクッキング-</string>
+    <string name="hello_world">はじめてのアプリ？</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_my_lecpi">myLecpi</string>
+
+</resources>
