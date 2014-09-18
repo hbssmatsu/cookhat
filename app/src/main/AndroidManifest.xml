@@ -21,6 +21,10 @@
             android:name=".myLecpi"
             android:label="@string/title_activity_my_lecpi" >
         </activity>
+        <activity
+            android:name=".MyCookActivity"
+            android:label="@string/title_activity_my_cook" >
+        </activity>
     </application>
 
 </manifest>

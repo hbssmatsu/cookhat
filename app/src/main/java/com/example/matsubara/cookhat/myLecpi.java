@@ -2,6 +2,7 @@ package com.example.matsubara.cookhat;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -22,11 +23,14 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 //import com.example.matsubara.cookhat.DatabaseHelper;
 import com.example.matsubara.cookhat.DBHelper;
 //import com.example.matsubara.cookhat.MyCustomListAdapter;
 //import com.example.matsubara.cookhat.MyCustomListData;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -131,6 +135,22 @@ public class myLecpi extends Activity {
 
             ListView listView = (ListView)findViewById(R.id.list);
             listView.setAdapter(myCustomListAdapter);
+
+            // アイテムクリック時ののイベントを追加
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent,
+                                        View view, int pos, long id) {
+
+                    // 選択アイテムを取得
+                    ListView listView = (ListView)parent;
+                    //String item = (String)listView.getItemAtPosition(pos);
+
+                    // 画面起動
+                    Intent intent = new Intent(getApplicationContext(), MyCookActivity.class);
+                    intent.putExtra("id", pos);
+                    startActivity(intent);
+                }
+            });
 
             // List Viewに表示
             /*ListView listView = (ListView) findViewById(R.id.list);
