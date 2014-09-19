@@ -96,9 +96,9 @@ public class myLecpi extends Activity {
             int[] mIcon = new int[columus.size()];
 
             // Image用に画像の設定
-            for (int i=0; i<columus.size(); i++) {
+            /*for (int i=0; i<columus.size(); i++) {
                 mIcon[i] = R.drawable.wanko;
-            }
+            }*/
 
             List<MyCustomListData> objects = new ArrayList<MyCustomListData>();
 
@@ -120,6 +120,10 @@ public class myLecpi extends Activity {
 
                 rowMunu = (String) columus.get(o).get("id");
                 listId[key] = rowMunu;
+
+                // Image
+                mIcon[key] = getResources().getIdentifier("recipe"+rowMunu, "drawable", this.getPackageName());
+
                 //Log.v("test", rowMunu);
                 //System.out.println(o + " = " + columus.get(o));
             }
@@ -143,7 +147,9 @@ public class myLecpi extends Activity {
 
                     // 選択アイテムを取得
                     ListView listView = (ListView)parent;
-                    //String item = (String)listView.getItemAtPosition(pos);
+
+                    // 表示列の料理IDの取得
+
 
                     // 画面起動
                     Intent intent = new Intent(getApplicationContext(), MyCookActivity.class);
