@@ -2,13 +2,22 @@ package com.example.matsubara.cookhat;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.example.matsubara.cookhat.DBHelper;
+
+import java.util.Map;
 
 
 public class MyCookActivity extends Activity {
+
+    private  DBHelper mDbHelper;
+    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +28,20 @@ public class MyCookActivity extends Activity {
         Intent intent = getIntent();
         int id = intent.getIntExtra("id", 0);
 
-        Log.v("test", String.valueOf(id));
+        mDbHelper = new DBHelper(this);
+        db = mDbHelper.getReadableDatabase();
+        if(db==null) return;
+
+        Map<Integer, Map> columus = mDbHelper.findAll("table_recipeLists", id, 0);
+        Map<String, String> rowData;
+        if(columus.size()==1) {
+            rowData = columus.get(0);
+            TextView titleView = (TextView)findViewById(R.id.cookTitle);
+            titleView.setText(rowData.get("name"));
+            //Log.v("test", rowData.get("name"));
+
+        }
+        //Log.v("test", String.valueOf(columus.size()) );
     }
 
 

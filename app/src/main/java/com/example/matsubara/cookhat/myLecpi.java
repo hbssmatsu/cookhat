@@ -62,7 +62,7 @@ public class myLecpi extends Activity {
 
         if(db!=null) {
 
-            Map<Integer, Map> columus = mDbHelper.findAll("table_recipeLists");
+            Map<Integer, Map> columus = mDbHelper.findAll("table_recipeLists", 0, 0);
 
             // ListView のため配列を初期化
             String[] listMenu = new String[columus.size()];

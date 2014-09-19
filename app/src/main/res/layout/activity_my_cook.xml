@@ -26,7 +26,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/cookTitle"
                 android:gravity="left"
-                android:text="タイトル"
                 android:background="#00aa00"/>
             <TextView
                 android:layout_width="match_parent"

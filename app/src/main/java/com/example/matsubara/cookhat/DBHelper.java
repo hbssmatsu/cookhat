@@ -174,15 +174,18 @@ public class DBHelper extends SQLiteOpenHelper {
     /*
      * データの読み込み
      */
-    public Map<Integer, Map> findAll(String table) {
+    public Map<Integer, Map> findAll(String table, int id, int page) {
         Map<Integer, Map> dataList = new HashMap<Integer, Map>();
 
-        String[] columus = new String[]{"id", "name"};
+        //String[] columus = new String[]{"id", "name"};
         String dbPath = mDatabasePath.getAbsolutePath();
+
+        String sql_where = null;
+        if(id>0) sql_where = "id=" + String.valueOf(id);
 
         //try {
             mDatabase = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.OPEN_READONLY);
-            Cursor cursor = mDatabase.query(table, columus, null, null, null, null, "default_para DESC, id DESC");
+            Cursor cursor = mDatabase.query(table, null, sql_where, null, null, null, "default_para DESC, id DESC");
 
             // 参照先を先頭に
             boolean isEof = cursor.moveToFirst();
