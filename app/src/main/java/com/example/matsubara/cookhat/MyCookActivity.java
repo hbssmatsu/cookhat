@@ -1,7 +1,9 @@
 package com.example.matsubara.cookhat;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -12,7 +14,14 @@ public class MyCookActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_cook);
+
+        // intentからパラメータ取得
+        Intent intent = getIntent();
+        int id = intent.getIntExtra("id", 0);
+
+        Log.v("test", String.valueOf(id));
     }
+
 
 
     @Override

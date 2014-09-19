@@ -56,32 +56,6 @@ public class myLecpi extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_lecpi);
 
-        // sample.txt
-        /*InputStream is = null;
-        BufferedReader br = null;
-        try {
-            try {
-                is = this.getAssets().open("sample.txt");
-                br = new BufferedReader( new InputStreamReader(is));
-
-                String samp_str;
-                String samp_text = "";
-                while ((samp_str=br.readLine())!=null) {
-                    samp_text += samp_str + "\n";
-                }
-                Log.v("test", samp_text);
-            }finally {
-                 if(is != null) is.close();
-                if(br != null ) {
-                    br.close();
-                }
-            }
-        }catch (Exception e) {
-            Log.v("test", "ERROR");
-        }*/
-
-        // here
-
         mDbHelper = new DBHelper(this);
         mDbHelper.createEmptyDataBase(); //DB更新
         db = mDbHelper.getReadableDatabase();
@@ -94,11 +68,7 @@ public class myLecpi extends Activity {
             String[] listMenu = new String[columus.size()];
             String[] listId = new String[columus.size()];
             int[] mIcon = new int[columus.size()];
-
-            // Image用に画像の設定
-            /*for (int i=0; i<columus.size(); i++) {
-                mIcon[i] = R.drawable.wanko;
-            }*/
+            final int[] listOrder = new int[columus.size()];
 
             List<MyCustomListData> objects = new ArrayList<MyCustomListData>();
 
@@ -123,6 +93,9 @@ public class myLecpi extends Activity {
 
                 // Image
                 mIcon[key] = getResources().getIdentifier("recipe"+rowMunu, "drawable", this.getPackageName());
+
+                // 表示順を記録
+                listOrder[key] = new Integer(rowMunu).intValue();
 
                 //Log.v("test", rowMunu);
                 //System.out.println(o + " = " + columus.get(o));
@@ -149,11 +122,12 @@ public class myLecpi extends Activity {
                     ListView listView = (ListView)parent;
 
                     // 表示列の料理IDの取得
-
+                    int no = listOrder[pos];
+                    //Log.v("test", "test:"+String.valueOf(test));
 
                     // 画面起動
                     Intent intent = new Intent(getApplicationContext(), MyCookActivity.class);
-                    intent.putExtra("id", pos);
+                    intent.putExtra("id", no);
                     startActivity(intent);
                 }
             });
