@@ -2,6 +2,7 @@ package com.example.matsubara.cookhat;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -22,11 +23,14 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 //import com.example.matsubara.cookhat.DatabaseHelper;
 import com.example.matsubara.cookhat.DBHelper;
 //import com.example.matsubara.cookhat.MyCustomListAdapter;
 //import com.example.matsubara.cookhat.MyCustomListData;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -52,49 +56,19 @@ public class myLecpi extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_lecpi);
 
-        // sample.txt
-        /*InputStream is = null;
-        BufferedReader br = null;
-        try {
-            try {
-                is = this.getAssets().open("sample.txt");
-                br = new BufferedReader( new InputStreamReader(is));
-
-                String samp_str;
-                String samp_text = "";
-                while ((samp_str=br.readLine())!=null) {
-                    samp_text += samp_str + "\n";
-                }
-                Log.v("test", samp_text);
-            }finally {
-                 if(is != null) is.close();
-                if(br != null ) {
-                    br.close();
-                }
-            }
-        }catch (Exception e) {
-            Log.v("test", "ERROR");
-        }*/
-
-        // here
-
         mDbHelper = new DBHelper(this);
         mDbHelper.createEmptyDataBase(); //DB更新
         db = mDbHelper.getReadableDatabase();
 
         if(db!=null) {
 
-            Map<Integer, Map> columus = mDbHelper.findAll("table_recipeLists");
+            Map<Integer, Map> columus = mDbHelper.findAll("table_recipeLists", 0, 0);
 
             // ListView のため配列を初期化
             String[] listMenu = new String[columus.size()];
             String[] listId = new String[columus.size()];
             int[] mIcon = new int[columus.size()];
-
-            // Image用に画像の設定
-            for (int i=0; i<columus.size(); i++) {
-                mIcon[i] = R.drawable.wanko;
-            }
+            final int[] listOrder = new int[columus.size()];
 
             List<MyCustomListData> objects = new ArrayList<MyCustomListData>();
 
@@ -116,6 +90,13 @@ public class myLecpi extends Activity {
 
                 rowMunu = (String) columus.get(o).get("id");
                 listId[key] = rowMunu;
+
+                // Image
+                mIcon[key] = getResources().getIdentifier("recipe"+rowMunu, "drawable", this.getPackageName());
+
+                // 表示順を記録
+                listOrder[key] = new Integer(rowMunu).intValue();
+
                 //Log.v("test", rowMunu);
                 //System.out.println(o + " = " + columus.get(o));
             }
@@ -131,6 +112,25 @@ public class myLecpi extends Activity {
 
             ListView listView = (ListView)findViewById(R.id.list);
             listView.setAdapter(myCustomListAdapter);
+
+            // アイテムクリック時ののイベントを追加
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent,
+                                        View view, int pos, long id) {
+
+                    // 選択アイテムを取得
+                    ListView listView = (ListView)parent;
+
+                    // 表示列の料理IDの取得
+                    int no = listOrder[pos];
+                    //Log.v("test", "test:"+String.valueOf(test));
+
+                    // 画面起動
+                    Intent intent = new Intent(getApplicationContext(), MyCookActivity.class);
+                    intent.putExtra("id", no);
+                    startActivity(intent);
+                }
+            });
 
             // List Viewに表示
             /*ListView listView = (ListView) findViewById(R.id.list);
