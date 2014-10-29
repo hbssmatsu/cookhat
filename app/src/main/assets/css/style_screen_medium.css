@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* -------------------------------------------------------------- 
+
+	スクリーンサイズ：mediumのスタイル／タブレット向け
+
+-------------------------------------------------------------- */
+/* 全体レイアウト */
+.layoutbox {
+	width:98%;
+	margin:0 auto;
+	clear:both;
+}
+#container {
+	width:100%;
+}
+#cont-main {
+	width:62.5%;
+}
+#cont-side {
+	width:31.25%;
+}
+
+/*---------- ヘッダ ----------*/
+header {
+	padding-bottom: 15px;
+}
+header .read {
+	position: static;
+	margin-bottom: 10px;
+}
+header #logo {
+	margin-top: 0px;
+}
+header #hd_utility {
+	margin-top: 0px;
+}
+/*---------- //ヘッダ ----------*/
+/*---------- グローバルナビゲーション ----------*/
+nav#global_menu ul {
+	margin-top:10px;
+}
+/*---------- //グローバルナビゲーション ----------*/
+/*---------- コンテンツ ----------*/
+#main_img {/*トップページスライド*/
+	padding: 0 0 3px 0;
+}
+#cont-main {
+	float:left;
+	/* [disabled]overflow: hidden; */
+	margin-top: 25px;
+}
+#cont-side {
+	float:right;
+	overflow: hidden;
+	margin-top: 25px;
+}
+/*---------- //コンテンツ ----------*/
+
+/*---------- テーブル ----------*/
+table.tbl01 th {
+	white-space: normal;
+}
+table.tbl02 th {
+	white-space: normal;
+}
+
+/*---------- //テーブル ----------*/
+/*-----フォーム-----*/
+.w50,
+.w100,
+.w150,
+.w200,
+.w300,
+.w400 {
+	width:90%;
+}
+/*-----//フォーム-----*/
+/*---------- プログレスリスト ----------*/
+ul.progress li {
+	width: auto;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+/*---------- //プログレスリスト ----------*/

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.matsubara.cookhat" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -9,9 +11,9 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MyActivity"
-            android:theme="@style/AppTheme.theme"
             android:label="@string/app_name"
-            android:screenOrientation="landscape" >
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.theme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,13 +22,17 @@
         </activity>
         <activity
             android:name=".myLecpi"
-            android:theme="@style/AppTheme.theme"
-            android:label="@string/title_activity_my_lecpi" >
+            android:label="@string/title_activity_my_lecpi"
+            android:theme="@style/AppTheme.theme" >
         </activity>
         <activity
             android:name=".MyCookActivity"
-            android:theme="@style/AppTheme.theme"
-            android:label="@string/title_activity_my_cook" >
+            android:label="@string/title_activity_my_cook"
+            android:theme="@style/AppTheme.theme" >
+        </activity>
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu" >
         </activity>
     </application>
 

@@ -1,0 +1,168 @@
+@charset "utf-8";
+
+/* -------------------------------------------------------------- 
+
+	スクリーンサイズ：smallのスタイル／スマートフォン向け
+
+-------------------------------------------------------------- */
+/* 全体レイアウト */
+.layoutbox {
+	width:98%;
+	margin:0 auto;
+	clear:both;
+}
+#container {
+	width:100%;
+}
+#cont-main {
+	width:100%;
+}
+#cont-side {
+	width:100%;
+}
+/*---------- ヘッダ ----------*/
+header {
+	padding-bottom: 15px;
+}
+header .read {
+	position: static;
+	margin-bottom: 10px;
+}
+header #logo {
+	margin-top: 0px;
+}
+header #hd_utility {
+	margin-top: 0px;
+}
+/*--サイト内検索--*/
+header #hd_utility input#site_search {
+	width:100px;
+}
+/*---------- //ヘッダ ----------*/
+/*---------- グローバルナビゲーション ----------*/
+nav#global_menu {
+	clear:both;
+	padding-top:1px;
+	margin-top:10px;
+}
+nav#global_menu ul {
+	clear:both;
+	float: none;
+	width:auto;
+	background: #333;
+	background-image:none;
+	text-align:center;
+	padding: 3px;
+	margin-top:10px;
+}
+nav#global_menu ul>li {
+	display:inline;
+	white-space:nowrap;
+	float: none;
+	text-align:center;
+	width:auto;
+}
+nav#global_menu ul>li>a {
+	background-image:none;
+	padding: 3px 10px;
+	color:#CCC;
+	display:inline;
+}
+nav#global_menu ul>li>a:link ,
+nav#global_menu ul>li>a:visited {
+	color: #DDD;
+	text-decoration: none;
+}
+nav#global_menu ul>li>a:hover ,
+nav#global_menu ul>li>a:active {
+	color: #FFF;
+	text-decoration: none;
+	background: #222;
+}
+/*--カレント表示--*/
+nav#global_menu ul>li.active>a:link ,
+nav#global_menu ul>li.active>a:visited {
+	color: #333;
+}
+/*---------- //グローバルナビゲーション ----------*/
+/*---------- リスト　3カラムを1カラム表示へ ----------*/
+ul.disp3col {
+	margin-right:0px;
+}
+ul.disp3col li {
+	float:none;
+	margin-right:0px;
+	width: auto;
+}
+ul.disp3col li .img {
+	margin:0 auto 5px;
+	text-align:center;
+}
+/*---------- //リスト　3カラムを1カラム表示へ ----------*/
+/*---------- リスト　2カラムを1カラム表示へ ----------*/
+ul.disp2col {
+	margin-right:0px;
+}
+ul.disp2col li {
+	float:none;
+	margin-right:0px;
+	width: auto;
+}
+ul.disp2col li .img {
+	margin:0 auto 5px;
+	text-align:center;
+}
+/*---------- //リスト　2カラムを1カラム表示へ ----------*/
+/*---------- ボタン ----------*/
+.btn01 a,
+.btn02 a,
+.btn03 a {
+	padding:20px;
+}
+/*---------- //ボタン ----------*/
+/*---------- テーブル ----------*/
+table.tbl01 th {
+	white-space: normal;
+}
+table.tbl02 th {
+	white-space: normal;
+}
+/*---------- //テーブル ----------*/
+/*-----フォーム-----*/
+.w50,
+.w100,
+.w150,
+.w200,
+.w300,
+.w400 {
+	width:90%;
+}
+/*-----//フォーム-----*/
+/*---------- プログレスリスト ----------*/
+ul.progress li {
+	width: auto;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size:smaller;
+}
+/*---------- //プログレスリスト ----------*/
+/*---------- ボタン ----------*/
+input.inputbtn01,
+input.inputbtn02,
+input.inputbtn03 {
+	padding:20px 5px;
+}
+/*---------- //ボタン ----------*/
+/*---------- ボタン配置 ----------*/
+.form_btn_set {
+	text-align:center;
+	width:auto;
+	margin:40px auto 0;
+	overflow: hidden;
+}
+.form_btn_set .send {
+	float:none;
+	margin-bottom:10px;
+}
+/*---------- //ボタン配置 ----------*/

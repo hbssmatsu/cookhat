@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>料理美人</title>
+    <!--ビューポートの横幅を指定-->
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!--980px～-->
+    <link rel="stylesheet" href="css/style_screen_large.css">
+    <!--641px～979px-->
+    <!-- <link rel="stylesheet" href="css/style_screen_medium.css" media="only screen and (min-width:641px) and (max-width:979px)"> -->
+    <!--～640px-->
+    <!-- <link rel="stylesheet" href="css/style_screen_small.css" media="only screen and (max-width:640px)"> -->
+    <script type="text/javascript">
+        function addMessage(msg) {
+            document.location = "app://action_finish";
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+    <div class="layoutbox">
+        <div id="cont-main">
+            <header>
+                <nav id="global_menu">
+                    <ul>
+                    <li class="active"><img src="images/menu_main.png"></li>
+                    <li><a href="appmenu://recipes"><img src="images/menu_recipes.png" alt="レシピ"></a></li>
+                    <li><a href="appmenu://lessons"><img src="images/menu_lessons.png" alt="花嫁修業"></a></li>
+                    <li><a href="appmenu://settings"><img src="images/menu_settings.png" alt="設定・ヘルプ"></a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="outline_large">
+
+            </section>
+        </div>
+    </div>
+</div>
+</body>
+</html>

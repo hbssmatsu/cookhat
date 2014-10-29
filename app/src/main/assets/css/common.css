@@ -1,0 +1,499 @@
+@charset "utf-8";
+/* -------------------------------------------------------------- 
+
+	基本スタイル・部品セット
+
+-------------------------------------------------------------- */
+/*-----基本設定-----*/
+
+body {
+	margin:0;
+	font:13px/1.8 Verdana,'ヒラギノ角ゴ ProN W3','Hiragino Kaku Gothic ProN','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+	*font-size:small;
+	*font:x-small;
+	color: #222;
+	letter-spacing: 0;/*IE7でズームしたときに崩れないおまじない*/
+	background: url("file:///android_asset/images/background.png") repeat top left;
+}
+
+/*-----リンクスタイル-----*/
+a:link {
+	color: #006699;
+	text-decoration: none;
+}
+a:visited {
+	color: #006699;
+	text-decoration: none;
+}
+a:hover {
+	color: #006699;
+	text-decoration: underline;
+}
+a:active {
+	color: #006699;
+	text-decoration: underline;
+}
+a.alpha:hover img {
+	/*モダンブラウザ用*/
+	opacity:0.85;
+	/*IE7以下用*/
+	filter:alpha(opacity=85);
+	/*IE8用*/
+	-ms-filter:"alpha(opacity=85)";
+}
+/*-----//リンクスタイル-----*/
+
+/* 画像 */
+img {
+	max-width:100%;
+	height:auto;
+	vertical-align:bottom;
+}
+/*---------- 見出し ----------*/
+.tit_large {
+	font-size: 185%;
+	line-height: 1.4;
+	font-weight: normal;
+	background: url(../images/line_double.png) repeat-x left bottom;
+	padding-bottom: 8px;
+	margin-bottom: 8px;
+}
+.tit_medium {
+	font-size: 131%;
+	line-height: 1.4;
+	font-weight: normal;
+	padding:8px 8px 8px 12px;
+	margin-bottom: 8px;
+	color:#333;
+	background-color: #BCD2D8;
+	/*Rounded Corners*/
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.tit_small {
+	font-size: 108%;
+	line-height: 1.4;
+	font-weight: bold;
+	background: url(../images/ico_disc01.png) no-repeat left 6px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	padding-left: 22px;
+	clear:both;
+}
+
+.txt_large {
+	font-size: 185%;
+	line-height: 1.4;
+	font-weight: normal;
+	clear:both;
+}
+.txt_medium {
+	font-size: 131%;
+	line-height: 1.4;
+	font-weight: normal;
+}
+.mintxt {
+	font-size: 77%;
+}
+/*---------- //見出し ----------*/
+/*---------- ボックス ----------*/
+.outline_large {
+	margin-bottom: 50px;
+	clear:both;
+	overflow:hidden;
+	width: 614px;
+	height: 301px;
+	background: #FFF url("file:///android_asset/images/main_content_back.png") no-repeat top left;
+}
+
+/*---------- ボックス ----------*/
+/*-----カラー-----*/
+.red {
+	color: #C03;
+}
+.gray {
+	color:#999;
+}
+/*-----カラー-----*/
+
+/*-----リスト-----*/
+li ul, li ol {
+	margin-left:1em;
+}
+ul.disc>li {
+	list-style: disc inside;
+	text-indent:-1em;
+	margin-left:1em;
+}
+ol.deci>li {
+	list-style:decimal inside;
+	text-indent:-1.3em;
+	margin-left:1.3em;
+}
+ul.alphabet>li {
+	list-style:lower-alpha inside;
+	text-indent:-1.3em;
+	margin-left:1.3em;
+}
+/*-----//リスト-----*/
+
+/*---------- 3カラムリスト ----------*/
+ul.disp3col {
+	clear:both;
+	margin-right:-35px;
+}
+ul.disp3col li {
+	float:left;
+	margin-right:35px;
+	margin-bottom: 20px;
+	width: 200px;
+	line-height: 1.6;
+}
+/*---------- //3カラムリスト ----------*/
+/*---------- 2カラムリスト ----------*/
+ul.disp2col {
+	clear:both;
+	margin-right:-50px;
+}
+ul.disp2col li {
+	float:left;
+	margin-right:50px;
+	margin-bottom: 20px;
+	width: 310px;
+	line-height: 1.6;
+}
+/*---------- //2カラムリスト ----------*/
+/*---------- 日付リスト ----------*/
+dl.daily {
+	clear:both;
+	/* [disabled]overflow:hidden; */
+	line-height: 1.4;
+	background: url(../images/line_dot.png) repeat-x left top;
+}
+dl.daily dt {
+	float:left;
+	color: #999;
+	clear:both;
+	border-right: 1px solid #CCC;
+	margin: 5px 0px 5px 0px;
+	padding-right:10px;
+}
+dl.daily dd {
+	background: url(../images/line_dot.png) repeat-x left bottom;
+	padding: 5px 0px 5px 10em;
+	margin: 0px 0px;
+}
+dl.daily dd a {
+	display: block;
+}
+/*---------- //日付リスト ----------*/
+
+/*---------- プログレスリスト ----------*/
+ul.progress {
+	overflow:hidden;
+	margin-right: -5px;
+}
+ul.progress li {
+	display:block;
+}
+ul.progress li {
+	width: 185px;
+	float: left;
+	display:block;
+	padding: 5px 0;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-right:5px;
+	color: #666;
+	background: #DDD;
+	/*Rounded Corners*/
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	text-align: center;
+}
+ul.progress li.current {
+	color: #FFF;
+	background: #666;
+}
+/*---------- //プログレスリスト ----------*/
+
+ul.list_banner li {
+	margin-bottom: 10px;
+}
+
+/*====================サイド====================*/
+
+/*----------ローカルメニュー ----------*/
+#cont-side ul.local_menu {
+	border-top: 1px solid #CCC;
+}
+#cont-side ul.local_menu li {
+	line-height:4;
+	border-bottom: 1px solid #CCC;
+}
+#cont-side ul.local_menu li a {
+	display:block;
+	padding-right: 10px;
+	padding-left: 18px;
+	text-decoration:none;
+	color: #333;
+}
+#cont-side ul.local_menu li:hover {
+	background: #DDD;
+}
+/*--カレント表示--*/
+#cont-side ul.local_menu li.active>:link ,
+#cont-side ul.local_menu li.active>:visited {
+	background:#CCC url(../images/ptn_gray.png);
+}
+/*---------- //ローカルメニュー ----------*/
+
+/*---------- 日付リスト ----------*/
+#cont-side ul.daily li{
+	line-height:1.6;
+	clear:both;
+	background: url(../images/line_dot.png) repeat-x left bottom;
+	padding: 5px 0px;
+	overflow:hidden;
+}
+#cont-side ul.daily li img {
+	float:left;
+	margin-right:10px;
+}
+#cont-side ul.daily li a {
+	text-decoration:none;
+}
+#cont-side ul.daily li .day {
+	font-size: 77%;
+}
+#cont-side ul.daily li .day,
+#cont-side ul.daily li a:link .day,
+#cont-side ul.daily li a:visited .day {
+	color:#999;
+}
+#cont-side ul.daily li a:hover .day,
+#cont-side ul.daily li a:active  .day {
+	color:#BBB;
+}
+#cont-side ul.daily li p,
+#cont-side ul.daily li a:link p,
+#cont-side ul.daily li a:visited p {
+	color:#555;
+}
+#cont-side ul.daily li a:hover p,
+#cont-side ul.daily li a:active  p {
+	color:#888;
+}
+/*---------- //日付リスト ----------*/
+
+/*---------- カレンダー ----------*/
+table.cal{
+	width:100%;
+}
+table.cal td{
+	text-align:center;
+}
+table.cal tr.headline td{
+	color: #999;
+}
+table.cal td .sun,
+table.cal td .holyday{
+	color: #F66;
+	background: #FFEEF7;
+}
+table.cal td .sat{
+	color: #369;
+	background: #EEF7FF;
+}
+table.cal tr.ui ul{
+	margin-top:10px;
+}
+table.cal tr.ui ul li{
+	float:right;
+	margin-right:8px;
+}
+table.cal tr.ui td a {
+	color: #666;
+	padding:3px 8px;
+	background: #E7E7E7;
+	border: 1px solid #CCC;
+}
+table.cal tr.ui td a:hover {
+	color: #444;
+	background: #F2F2F2;
+	border: 1px solid #CCC;
+	text-decoration:none;
+}
+
+/*---------- //カレンダー ----------*/
+
+
+
+/*====================サイド====================*/
+
+/*---------- ボタン ----------*/
+.btn01 a {
+	border:0px;
+	line-height:65px;
+	text-align:center;
+	text-decoration:none;
+	white-space: nowrap;
+	padding:20px 60px;
+	margin:0px;
+	color:#FFF;
+	background-color: #333;
+	/*Rounded Corners*/
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	/*Gradient*/
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+.btn01 a:hover {
+	background-color: #444;
+}
+.btn02 a {
+	border:0px;
+	line-height:65px;
+	text-align:center;
+	text-decoration:none;
+	white-space: nowrap;
+	padding:20px 60px;
+	margin:0px;
+	color:#FFF;
+	background-color: #666;
+	/*Rounded Corners*/
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	/*Gradient*/
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+.btn02 a:hover {
+	background-color: #777;
+}
+.btn03 a {
+	border:0px;
+	line-height:65px;
+	text-align:center;
+	text-decoration:none;
+	white-space: nowrap;
+	padding:20px 60px;
+	margin:0px;
+	color:#FFF;
+	background-color: #7CA6B1;
+	/*Rounded Corners*/
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	/*Gradient*/
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+.btn03 a:hover {
+	background-color: #6396A3;
+}
+
+/*---------- //ボタン ----------*/
+
+/*---------- テーブル ----------*/
+table.tbl01 {/*偶数行・奇数行デザイン有り*/
+	width: 100%;
+}
+table.tbl01 th,
+table.tbl01 td {
+	border: 1px solid #CCC;
+}
+table.tbl01 th {
+	background: #E6EEF0;
+	font-weight: normal;
+	text-align: left;
+	padding: 10px 13px;
+	white-space: nowrap;
+	width: 30%;
+}
+table.tbl01 td {
+	padding: 10px;
+	width: 70%;
+}
+table.tbl01 .odd th{/*偶数行に背景色をつける*/
+	background: #D9E4E8;
+	}
+table.tbl01 .odd td{/*偶数行に背景色をつける*/
+	background: #F4F8F9;
+	}
+
+table.tbl02 {/*偶数行・奇数行デザイン無し*/
+	width: 100%;
+}
+table.tbl02 th,
+table.tbl02 td {
+	border: 1px solid #CCC;
+}
+table.tbl02 th {
+	background: #E6EEF0;
+	font-weight: normal;
+	text-align: left;
+	padding: 7px 10px;
+	white-space: nowrap;
+	width: 30%;
+}
+table.tbl02 td {
+	padding: 7px;
+	width: 70%;
+}
+/*---------- //テーブル ----------*/
+
+
+
+/*-----その他スタイル-----*/
+img {
+	vertical-align: middle;
+}
+strong {
+	font-weight: bold;
+}
+table {
+	border-collapse:collapse;
+}
+th {
+	vertical-align: middle;
+}
+td {
+	vertical-align: top;
+}
+em {
+	font-style:normal;
+	font-weight:bold;
+}
+.smaller {
+	font-size: 85%;
+}
+.larger {
+	font-size: 120%;
+}
+.center {
+	text-align:center;
+}
+.right {
+	text-align:right;
+}
+.bold {
+	font-weight: bold;
+}
+.normal {
+	font-weight: normal;
+}
