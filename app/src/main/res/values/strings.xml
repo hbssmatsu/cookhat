@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_my_lecpi">myLecpi</string>
     <string name="title_activity_my_cook">MyCookActivity</string>
+    <string name="title_activity_menu">MenuActivity</string>
 
 </resources>

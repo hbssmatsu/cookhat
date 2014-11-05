@@ -53,6 +53,7 @@ public class myLecpi extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.v("test", "myLecpiClass read");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_lecpi);
 

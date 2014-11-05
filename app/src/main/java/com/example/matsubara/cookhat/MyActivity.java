@@ -44,11 +44,12 @@ public class MyActivity extends Activity implements View.OnClickListener {
         // muenu
         MenuActivity mvc = new MenuActivity();
         mvc.owner = this;
-
+        //webView = mvc.webView;
 
         // アプリ内に遷移する。
         //webView.setWebViewClient(new WebViewClient());
         webView.setWebViewClient((WebViewClient)mvc);
+
 
         //JavaScript enable
         WebSettings webSettings = webView.getSettings();
